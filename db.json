@@ -1,4 +1,23 @@
 {
   "books": [],
-  "movies": []
+  "movies": [
+    {
+      "title": "Pulp Fiction",
+      "notes": "Good movie",
+      "rating": "5",
+      "id": 1
+    },
+    {
+      "title": "Donnie Darko",
+      "notes": "Nice movie",
+      "rating": "4",
+      "id": 2
+    },
+    {
+      "title": "Interstellar",
+      "notes": "Masterpiece",
+      "rating": "5",
+      "id": 3
+    }
+  ]
 }
