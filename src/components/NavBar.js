@@ -1,7 +1,7 @@
 import { useContext } from 'react';
+import NavigationContext from '../context/navigation';
 import { AppBar, Toolbar, Typography, Button, IconButton, Box } from '@mui/material';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
-import NavigationContext from '../context/navigation';
 
 function NavBar() {
     const { navigate } = useContext(NavigationContext);

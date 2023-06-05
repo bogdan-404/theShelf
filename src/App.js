@@ -5,6 +5,10 @@ import MoviesPage from "./pages/MoviesPage";
 import Route from "./components/Route"
 import NavBar from "./components/NavBar";
 import { NavigationProvider } from "./context/navigation";
+import { MoviesProvider } from "./context/movies";
+import { Container } from "@mui/material";
+
+import AddMovieForm from "./components/AddMovieForm";
 
 function App() {
 
@@ -12,17 +16,27 @@ function App() {
     <div>
       <NavigationProvider>
         <NavBar />
-        <div>
-          <Route path="/startup">
-            <StartupPage />
-          </Route>
-          <Route path="/books">
-            <BooksPage />
-          </Route>
-          <Route path="/movies">
+
+        <Route path="/startup">
+          <StartupPage />
+        </Route>
+
+        <Route path="/books">
+          <BooksPage />
+        </Route>
+
+        <Route path="/movies">
+          <MoviesProvider>
             <MoviesPage />
-          </Route>
-        </div>
+          </MoviesProvider>
+        </Route>
+
+        <Route path="/add-movie">
+          <MoviesProvider>
+            <AddMovieForm />
+          </MoviesProvider>
+        </Route>
+
       </NavigationProvider>
     </div>
   );
