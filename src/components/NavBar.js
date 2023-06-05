@@ -9,14 +9,16 @@ function NavBar() {
     return (
         <AppBar position="static" style={{ backgroundColor: 'black' }}>
             <Toolbar>
-                <IconButton edge="start" color="inherit" onClick={() => navigate("/startup")}>
+                <IconButton edge="start" color="inherit" style={{ marginLeft: 5 }} onClick={() => navigate("/startup")}>
                     <CollectionsBookmarkIcon />
                 </IconButton>
-                <Typography variant="h6" style={{ flexGrow: 1 }} onClick={() => navigate("/startup")}>
-                    theShelf
-                </Typography>
-                <Button color="inherit" style={{ marginRight: 40 }} onClick={() => navigate("/books")}>Books</Button>
-                <Button color="inherit" style={{ marginRight: 40 }} onClick={() => navigate("/movies")}>Movies</Button>
+                <IconButton color="inherit" onClick={() => navigate("/startup")}>
+                    <Typography variant="h6" style={{ flexGrow: 1 }}>
+                        theShelf
+                    </Typography>
+                </IconButton>
+                <Button color="inherit" style={{ marginLeft: 900 }} onClick={() => navigate("/books")}>Books</Button>
+                <Button color="inherit" style={{ marginLeft: 40 }} onClick={() => navigate("/movies")}>Movies</Button>
             </Toolbar>
         </AppBar>
     );
