@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton, Box } from '@mui/material';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import NavigationContext from '../context/navigation';
 
@@ -17,8 +17,9 @@ function NavBar() {
                         theShelf
                     </Typography>
                 </IconButton>
-                <Button color="inherit" style={{ marginLeft: 900 }} onClick={() => navigate("/books")}>Books</Button>
-                <Button color="inherit" style={{ marginLeft: 40 }} onClick={() => navigate("/movies")}>Movies</Button>
+                <Box style={{ flexGrow: 1 }} />
+                <Button color="inherit" style={{ marginRight: 30 }} onClick={() => navigate("/books")}>Books</Button>
+                <Button color="inherit" onClick={() => navigate("/movies")}>Movies</Button>
             </Toolbar>
         </AppBar>
     );

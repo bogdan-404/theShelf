@@ -4,7 +4,7 @@ function StartupPage() {
 
     return (
         <Container>
-            
+            StartupPage
         </Container>
 
     );
