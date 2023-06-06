@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import MoviesContext from '../context/movies';
-import MovieShow from '../components/MovieShow';
+import MovieShow from './MovieShow';
 
 
 function MovieList() {

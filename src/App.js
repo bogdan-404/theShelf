@@ -6,9 +6,10 @@ import Route from "./components/Route"
 import NavBar from "./components/NavBar";
 import AddMovieForm from "./components/AddMovieForm";
 import EditMovieForm from "./components/EditMovieForm";
+import AddBookForm from "./components/AddBookForm";
 import { NavigationProvider } from "./context/navigation";
 import { MoviesProvider } from "./context/movies";
-
+import { BooksProvider } from "./context/books";
 
 function App() {
 
@@ -16,12 +17,21 @@ function App() {
     <div>
       <NavigationProvider>
         <NavBar />
+
         <Route path="/startup">
           <StartupPage />
         </Route>
-        <Route path="/books">
-          <BooksPage />
-        </Route>
+
+        <BooksProvider>
+          <Route path="/books">
+            <BooksPage />
+          </Route>
+          <Route path="/add-book">
+            <AddBookForm />
+          </Route>
+
+        </BooksProvider>
+
 
         <MoviesProvider>
           <Route path="/movies">

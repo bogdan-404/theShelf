@@ -1,20 +1,25 @@
-import { useState, useContext } from "react";
+import { useState, useContext } from 'react';
+import BooksContext from '../context/books';
 import NavigationContext from '../context/navigation';
-import MoviesContext from '../context/movies';
 import { TextField, Button, Container, Typography, Rating, Grid, Box } from "@mui/material";
 
 
-function AddMovieForm() {
+function AddBookForm() {
     const { navigate } = useContext(NavigationContext);
-    const { addMovie } = useContext(MoviesContext);
+    const { addBook } = useContext(BooksContext);
 
     const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
     const [rating, setRating] = useState(0);
     const [notes, setNotes] = useState("");
-
+    const [quotes, setQuotes] = useState("");
 
     const handleChangeTitle = (event) => {
         setTitle(event.target.value);
+    }
+
+    const handleChangeAuthor = (event) => {
+        setAuthor(event.target.value);
     }
 
     const handleChangeRating = (event) => {
@@ -25,30 +30,37 @@ function AddMovieForm() {
         setNotes(event.target.value);
     }
 
+    const handleChangeQuotes = (event) => {
+        setQuotes(event.target.value);
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        addMovie(title, notes, rating);
+        addBook(title, author, notes, quotes, rating);
         defaultValues();
-        navigate("/movies");
+        navigate("/books");
     }
 
     const handleCancel = () => {
         defaultValues();
-        navigate("/movies");
+        navigate("/books");
     }
 
     const defaultValues = () => {
         setTitle('');
+        setAuthor('');
         setRating(0);
         setNotes('');
+        setQuotes('');
     }
-
 
     return (
         <Container style={{ margin: 'auto', maxWidth: '60%' }}>
+
             <Typography variant="h4" align="center" style={{ marginTop: 40 }}>
-                Add Movie
+                Add Book
             </Typography>
+
             <form onSubmit={handleSubmit} style={{ marginTop: 40 }}>
                 <Grid container spacing={3} justifyContent="center" direction="column">
                     <Grid item xs={12} sm={4}>
@@ -63,25 +75,46 @@ function AddMovieForm() {
                         />
                     </Grid>
                     <Grid item xs={12} sm={4}>
+                        <Typography component="legend" >Author</Typography>
+                        <TextField
+                            value={author}
+                            onChange={handleChangeAuthor}
+                            label="Author"
+                            variant="outlined"
+                            fullWidth
+                            style={{ marginTop: 3 }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
                         <Typography component="legend">Notes</Typography>
                         <TextField
                             value={notes}
                             onChange={handleChangeNotes}
                             variant="outlined"
-                            fullWidth
                             multiline
                             rows={4}
+                            fullWidth
                             style={{ marginTop: 3 }}
                         />
                     </Grid>
                     <Grid item xs={12} sm={4}>
-                        <Typography component="legend">Your Rating</Typography>
+                        <Typography component="legend">Favorite Quotes</Typography>
+                        <TextField
+                            value={quotes}
+                            onChange={handleChangeQuotes}
+                            variant="outlined"
+                            multiline
+                            rows={4}
+                            fullWidth
+                            style={{ marginTop: 3 }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Typography component="legend">Rating</Typography>
                         <Rating
-                            name="simple-controlled"
                             value={rating}
                             onChange={handleChangeRating}
-                            size="large"
-                            style={{ marginTop: 3 }}
+                            name="simple-controlled"
                         />
                     </Grid>
                     <Grid item xs={12} sm={4} md={4}>
@@ -97,7 +130,7 @@ function AddMovieForm() {
                 </Grid>
             </form>
         </Container>
-    )
+    );
 }
 
-export default AddMovieForm;
+export default AddBookForm;
