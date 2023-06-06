@@ -1,16 +1,28 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import NavigationContext from '../context/navigation';
 import MoviesContext from '../context/movies';
 import { TextField, Button, Container, Typography, Rating, Grid, Box } from "@mui/material";
+import { useParams } from 'react-router-dom';
 
 
-function AddMovieForm() {
+function EditMovieForm() {
     const { navigate } = useContext(NavigationContext);
-    const { addMovie } = useContext(MoviesContext);
+    const { movies, updateMovie } = useContext(MoviesContext);
+    const { id } = useParams();
 
-    const [title, setTitle] = useState("");
+    const [title, setTitle] = useState('');
     const [rating, setRating] = useState(0);
-    const [notes, setNotes] = useState("");
+    const [notes, setNotes] = useState('');
+
+    useEffect(() => {
+        const movie = movies.find(movie => movie.id === id);
+        if (movie) {
+            setTitle(movie.title);
+            setRating(movie.rating);
+            setNotes(movie.notes);
+        }
+    }, [movies, id]);
+
 
 
     const handleChangeTitle = (event) => {
@@ -27,7 +39,7 @@ function AddMovieForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addMovie(title, notes, rating);
+        updateMovie(id, title, notes, rating);
         defaultValues();
         navigate("/movies");
     }
@@ -47,7 +59,7 @@ function AddMovieForm() {
     return (
         <Container style={{ margin: 'auto', maxWidth: '60%' }}>
             <Typography variant="h4" align="center" style={{ marginTop: 40 }}>
-                Add Movie
+                Edit Movie
             </Typography>
             <form onSubmit={handleSubmit} style={{ marginTop: 40 }}>
                 <Grid container spacing={3} justifyContent="center" direction="column">
@@ -101,4 +113,4 @@ function AddMovieForm() {
     )
 }
 
-export default AddMovieForm;
+export default EditMovieForm;

@@ -4,17 +4,18 @@ import { Card, CardContent, Typography, IconButton, Box, Button } from "@mui/mat
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import StarIcon from '@mui/icons-material/Star';
+import NavigationContext from '../context/navigation';
 
 function MovieShow({ movie }) {
     const { deleteMovie } = useContext(MoviesContext);
-
+    const { navigate } = useContext(NavigationContext);
 
     const handleDelete = (movie) => {
         deleteMovie(movie.id);
     }
 
     const handleEdit = (movie) => {
-        console.log('edit');
+        navigate(`/edit-movie/${movie.id}`);
     }
 
 
