@@ -6,10 +6,24 @@ The primary objective of this project us to implement my knowledge of React, to 
 
 ## Pages
 
+### Home Page:
+
 ![Home Page](img_readme/startup.jpeg)
+
+### Books Page:
+
 ![Books Page](img_readme/books.jpeg)
+
+### Movies Page:
+
 ![Movies Page](img_readme/movies.jpeg)
+
+### Add Book Page:
+
 ![Add Book Page](img_readme/add_book.jpeg)
+
+### Add Movie Page:
+
 ![Add Movie Page](img_readme/add_movie.jpeg)
 
 ## To-Do
