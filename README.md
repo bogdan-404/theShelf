@@ -2,7 +2,7 @@
 
 ## Quick Overview
 
-The primary objective of this project us to implement my knowledge of React, to create a simple web application that allows users to create a list of books they have read, and movies they have watched. The project use props, contexts, hooks, routing. To save all the data on the page refresh, the project uses JSON Server. The components are built using Material UI.
+The primary objective of this project is to implement my knowledge of React, and create a simple web application that allows users to create a list of books they have read, and movies they have watched. The project uses props, contexts, hooks, routing. To save all the data after the page refresh, the project uses JSON Server. The components are built using Material UI.
 
 ## Pages
 
