@@ -71,6 +71,7 @@ function AddBookForm() {
                             label="Title"
                             variant="outlined"
                             fullWidth
+                            required
                             style={{ marginTop: 3 }}
                         />
                     </Grid>
@@ -82,6 +83,7 @@ function AddBookForm() {
                             label="Author"
                             variant="outlined"
                             fullWidth
+                            required
                             style={{ marginTop: 3 }}
                         />
                     </Grid>

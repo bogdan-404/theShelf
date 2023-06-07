@@ -59,6 +59,7 @@ function AddMovieForm() {
                             label="Title"
                             variant="outlined"
                             fullWidth
+                            required
                             style={{ marginTop: 3 }}
                         />
                     </Grid>

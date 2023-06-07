@@ -29,9 +29,10 @@ function App() {
           <Route path="/add-book">
             <AddBookForm />
           </Route>
-
+          <Route path="/:id">
+            <AddBookForm />
+          </Route>
         </BooksProvider>
-
 
         <MoviesProvider>
           <Route path="/movies">

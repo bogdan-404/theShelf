@@ -1,5 +1,38 @@
 {
-  "books": [],
+  "books": [
+    {
+      "title": "Clockwork Orange",
+      "author": "Anthony Burgess",
+      "notes": "Darkly satirical critique of societal violence",
+      "quotes": "\"Is it better for a man to have chosen evil than to have good imposed upon him?\"",
+      "rating": "4",
+      "id": 1
+    },
+    {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "notes": " A chilling tale about the consequences of censorship and ignorance",
+      "quotes": "\"There must be something in books, things we can't imagine, to make a woman stay in a burning house; there must be something there. You don't stay for nothing.\"",
+      "rating": "5",
+      "id": 2
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "notes": "An epic journey through a richly imagined world",
+      "quotes": "All we have to decide is what to do with the time that is given us.\"",
+      "rating": "4",
+      "id": 3
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "notes": "A charming adventure story filled with magic, treasure, and dragons",
+      "quotes": "“There is nothing like looking, if you want to find something. You certainly usually find something, if you look, but it is not always quite the something you were after.”",
+      "rating": "4",
+      "id": 4
+    }
+  ],
   "movies": [
     {
       "title": "Pulp Fiction",
